@@ -7,6 +7,8 @@ TagManager:
   - Anchor
   - Flammable
   - Potion
+  - BrewedPotion
+  - Rusty_Key
   layers:
   - Default
   - TransparentFX
