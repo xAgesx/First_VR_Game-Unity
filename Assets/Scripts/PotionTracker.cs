@@ -31,18 +31,22 @@ public class PotionTracker : MonoBehaviour {
 
     private IEnumerator TransformRoutine(float duration, Material newMat, GameObject uiPrefab, Vector3 offset) {
         Slider progressBar = null;
+        Text timer = null;
 
         // Create UI
         if (uiPrefab != null) {
             activeUI = Instantiate(uiPrefab, transform.position + offset, Quaternion.identity, transform);
             progressBar = activeUI.GetComponentInChildren<Slider>();
+            timer = activeUI.transform.Find("Header Text").GetComponent<Text>();
+            Debug.Log(timer);
         }
 
         float elapsed = 0;
         while (elapsed < duration) {
             elapsed += Time.deltaTime;
-            if (progressBar != null) {
+            if (progressBar != null && timer != null) {
                 progressBar.value = elapsed / duration;
+                timer.text = ((int)(duration-elapsed)).ToString();
             }
             yield return null;
         }

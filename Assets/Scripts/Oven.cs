@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Oven : MonoBehaviour {
-    [SerializeField] Slider slider;
+    public Slider slider;
     [SerializeField] Text temperatureText;
     [SerializeField] Gradient tempGradient;
     [SerializeField] Image fillImage;
@@ -13,6 +13,7 @@ public class Oven : MonoBehaviour {
     [SerializeField] float maxparticlesCount = 50f;
     public float targetValue;
     public float coolingRate;
+    public float tempThreshhold = 0.7f;
     void Update() {
         if (slider != null) {
             slider.value = Mathf.MoveTowards(slider.value, targetValue, coolingRate * Time.deltaTime);

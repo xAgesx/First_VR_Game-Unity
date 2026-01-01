@@ -9,6 +9,7 @@ TagManager:
   - Potion
   - BrewedPotion
   - Rusty_Key
+  - Key
   layers:
   - Default
   - TransparentFX

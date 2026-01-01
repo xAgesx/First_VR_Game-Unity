@@ -9,6 +9,7 @@ public class ovenCollider : MonoBehaviour {
     
     [SerializeField] Vector3 offset = new Vector3(0, 0.5f, 0); 
     [SerializeField] float transformationDuration = 3.0f;
+    
 
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Flammable")) {
@@ -18,7 +19,7 @@ public class ovenCollider : MonoBehaviour {
             }
             Destroy(other.gameObject);
         } 
-        else if (other.CompareTag("Potion")) {
+        else if (other.CompareTag("Potion") && ovenScript.slider.value >= ovenScript.tempThreshhold) {
             PotionTracker tracker = other.gameObject.GetComponent<PotionTracker>();
             if (tracker == null) tracker = other.gameObject.AddComponent<PotionTracker>();
 

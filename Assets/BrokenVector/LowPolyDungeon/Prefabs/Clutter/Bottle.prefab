@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 3490355613018226623}
   - component: {fileID: 1699207973293591413}
   - component: {fileID: 3436682783366488569}
-  - component: {fileID: 9097961522226010662}
-  - component: {fileID: 6554635642243651309}
   - component: {fileID: 7907688977288680321}
   - component: {fileID: 1977923450509942929}
+  - component: {fileID: 4542703763586204720}
+  - component: {fileID: 7365512420824674088}
+  - component: {fileID: 3454806493378962105}
   m_Layer: 7
   m_Name: Bottle
   m_TagString: Potion
@@ -114,7 +115,35 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6121590469811200223, guid: 764ac3d453b8da24d91a0894ffdc6655, type: 3}
---- !u!54 &9097961522226010662
+--- !u!114 &7907688977288680321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906403121377487520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a35e5d808234ed4a9ec8ad9a1980a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 7e472ee76cbf5ac44a71ebdb3ded0a08, type: 2}
+--- !u!114 &1977923450509942929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906403121377487520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96096b205b6fce14ea755beb72859bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTransformed: 0
+  isCooking: 0
+  potionPrefab: {fileID: 8978565220858511572, guid: 664e9285fbe9af747aac48c441e2d619, type: 3}
+--- !u!54 &4542703763586204720
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,10 +167,10 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &6554635642243651309
+--- !u!114 &7365512420824674088
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,7 +297,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &7907688977288680321
+--- !u!114 &3454806493378962105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,18 +310,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverMaterial: {fileID: 2100000, guid: 7e472ee76cbf5ac44a71ebdb3ded0a08, type: 2}
---- !u!114 &1977923450509942929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906403121377487520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96096b205b6fce14ea755beb72859bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTransformed: 0
-  isCooking: 0
-  potionPrefab: {fileID: 8978565220858511572, guid: 664e9285fbe9af747aac48c441e2d619, type: 3}
