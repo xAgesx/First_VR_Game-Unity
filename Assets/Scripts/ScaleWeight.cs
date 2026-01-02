@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class ScaleWeight : MonoBehaviour {
     float targetValue = 0f;
     Slider slider;
     [SerializeField]doorTrigger eventTrigger;
+    [SerializeField] AudioSource hint;
+    bool hintHasPlayed = false;
 
     void Start() {
         slider = weightSliderUI.GetComponent<Slider>();
@@ -30,6 +33,10 @@ public class ScaleWeight : MonoBehaviour {
 
             totalMass += other.GetComponent<Rigidbody>().mass;
             text.text = totalMass.ToString() + " Kg";
+            if (!hintHasPlayed) {
+                hint.Play();
+                hintHasPlayed = true;
+            }
 
             if (totalMass > neededWeight * 2) {
                 totalMass = neededWeight * 2;

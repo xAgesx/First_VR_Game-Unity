@@ -8,6 +8,7 @@ public class Brew : MonoBehaviour {
     [SerializeField] GameObject keyPrefab;
     public float spawnVelocity;
     public Vector3 offset;
+    [SerializeField] AudioSource hint;
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("BrewedPotion")) {
             transform.GetChild(0).gameObject.SetActive(true);
@@ -15,6 +16,7 @@ public class Brew : MonoBehaviour {
             GetComponent<MeshRenderer>().enabled = true;
 
             Destroy(other.gameObject);
+            hint.Play();
         }else if (other.CompareTag("Rusty_Key")) {
             transform.GetChild(2).gameObject.SetActive(true);
             transform.GetChild(2).GetComponent<ParticleSystem>().Play();

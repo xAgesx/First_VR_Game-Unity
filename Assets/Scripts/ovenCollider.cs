@@ -9,9 +9,14 @@ public class ovenCollider : MonoBehaviour {
     
     [SerializeField] Vector3 offset = new Vector3(0, 0.5f, 0); 
     [SerializeField] float transformationDuration = 3.0f;
-    
+    [SerializeField] bool hintHasPlayed = false;
+    [SerializeField] AudioSource hint;
 
     void OnTriggerEnter(Collider other) {
+        if (!hintHasPlayed) {
+            hint.Play();
+            hintHasPlayed = true;
+        }
         if (other.CompareTag("Flammable")) {
             var details = other.gameObject.GetComponent<ObjectDetails>();
             if (details != null) {
