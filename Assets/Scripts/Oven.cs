@@ -14,11 +14,17 @@ public class Oven : MonoBehaviour {
     public float targetValue;
     public float coolingRate;
     public float tempThreshhold = 0.7f;
+    [SerializeField] AudioSource firecracklingAudio;
     void Update() {
         if (slider != null) {
             slider.value = Mathf.MoveTowards(slider.value, targetValue, coolingRate * Time.deltaTime);
             UpdateVisuals();
             UpdateParticles();
+            if(slider.value > 0.1 && !firecracklingAudio.isPlaying) {
+                firecracklingAudio.Play();
+            }else if (slider.value == 0 && firecracklingAudio.isPlaying) {
+                firecracklingAudio.Stop();
+            }
         }
         if(firewoodStack.transform.childCount < 3) {
             Instantiate(firewoodprefab , firewoodStack.transform);
