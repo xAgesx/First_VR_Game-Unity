@@ -9,6 +9,7 @@ public class doorTrigger : MonoBehaviour {
     public PlayableDirector pd;
     public AudioSource openingAudio;
     public GameObject player;
+    public float triggerDistance;
 
     public void openDoor() {
 
@@ -20,8 +21,8 @@ public class doorTrigger : MonoBehaviour {
         pd.Play();
     }
     void Update() {
-        Debug.Log(Vector3.Distance(player.transform.position,transform.position));
-        if(Vector3.Distance(player.transform.position,transform.position) <= 10) {
+        Debug.Log(Vector3.Distance(player.transform.position,transform.position) );
+        if(Vector3.Distance(player.transform.position,transform.position) <= triggerDistance && GetComponent<Animator>().GetBool("isOpen")) {
             
             playTimeline();
         }
