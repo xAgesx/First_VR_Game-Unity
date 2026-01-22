@@ -1,4 +1,4 @@
-# 🏰 King’s Trials
+# 🏰 King’s Trials - <a href="https://github.com/xAgesx/First_VR_Game-Unity/releases/tag/v0.1">Download here
 
 <h2>👁️ Virtual Tour</h2>
 
